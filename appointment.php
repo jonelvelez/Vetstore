@@ -27,7 +27,7 @@ if(isset($_POST['regSubmit'])){
 
         $con->query($sql) or die ($con->error);
 
-        echo $userId;
+     
         // echo header("Location: profile.php");
     } else {
 

@@ -4,25 +4,32 @@
 
 <?php
 
-    //Client User ID
-    $userId = $_SESSION['UserId'];
+    //Pet Data Details
+    if(isset($_SESSION['UserId'])) {
 
-    $sqlPetData = "SELECT * FROM pet_reg WHERE user_id = '$userId'";
-    $user = $con->query($sqlPetData) or die ($con->error);
-
-    if($user->num_rows > 0) {
-
-        $array = array();
-
-        while($rows = $user->fetch_assoc()) {
-
-            $petname = $rows["pet_name"];
-
-            $array[] = $petname;
-         
-        } 
+      $userId = $_SESSION['UserId'];
+  
+      $sqlPetData = "SELECT * FROM pet_reg WHERE user_id = '$userId'";
+      $user = $con->query($sqlPetData) or die ($con->error);
+  
+        if($user->num_rows > 0) {
     
-    } 
+            $petnames_array = array();
+            $petId_array = array();
+    
+            while($rows = $user->fetch_assoc()) {
+    
+                $petname = $rows["pet_name"];
+                $petId = $rows["id"];
+    
+                $petnames_array[] = $petname;
+                $petId_array[] = $petId;
+            
+            } 
+      
+        } 
+
+    }
 
 ?>
 
@@ -239,16 +246,18 @@
           <form >
              <div class='container-fluid'>
                 <div class='row '>
-                      <div class="profilebody">
-                   
-                        <select id="">
-                          <?php foreach($array as $data): ?>
-                        
-                             <option value="<?php echo $data ?>"><?php echo $data ?></option>
                      
+                   
+                      <select name="users" onchange="petData(this.value)">
+                          <?php foreach(array_combine($petnames_array, $petId_array ) as $petname_array => $pet_Id): ?>
+             
+                             <option value="<?php echo $pet_Id;?>"><?php echo $petname_array ?></option>
+
                           <?php endforeach ?>
                         </select>
-              
+  
+                        <div class="profilebody">
+
                       </div>
                   </div>  
               </div>

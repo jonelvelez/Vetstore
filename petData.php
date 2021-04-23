@@ -11,14 +11,18 @@ include_once("connections/connection.php");
 $con = connection();
 
 //Client User ID
-$userId = $_SESSION['UserId'];
 
-    $sqlPetData = "SELECT * FROM pet_reg WHERE user_id = '$userId'";
+// $userId = $_SESSION['UserId'];
+
+
+$petId = $_GET['q'];
+
+    $sqlPetData = "SELECT * FROM pet_reg WHERE id = '$petId'";
     $user = $con->query($sqlPetData) or die ($con->error);
- 
+
     if($user->num_rows > 0) {
 
-        while($rows = $user->fetch_assoc()) {
+            while($rows = $user->fetch_assoc()) {
 
             $petName = $rows["pet_name"];
             $petBreed = $rows["pet_breed"];
@@ -28,21 +32,13 @@ $userId = $_SESSION['UserId'];
             // $petsName = str_split($petName);
             // $_SESSION['petName'] = $petName;
             
+            echo "<p>" . $petName ."</p>","<p>". $petBreed . "</p>";
 
-            echo "<div class='pet-info'>
-                        <div class='pet-details'>
-                            <select name='' id=''>
-                                
-                                <option value='".$petName."'>$petName</option>
-                            </select>
-                        </div>
-                     </div>";
 
         }
-
-        
-            
+     
     }
+    
     
 ?>
 
