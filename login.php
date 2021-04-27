@@ -24,8 +24,8 @@ if(isset($_POST['login'])){
         $_SESSION['Userlname'] = $row['last_name'];
         $_SESSION['UserEmail'] = $row['email'];
   
-    } else if ($total == 0) {
-       
+    } else {
+
         echo "<div class='alert alert-danger'>
         <strong>email or password is incorrect!</strong>
         </div>";

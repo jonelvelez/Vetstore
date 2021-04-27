@@ -14,16 +14,25 @@
   
         if($user->num_rows > 0) {
     
-            $petnames_array = array();
             $petId_array = array();
+            $petnames_array = array();
+            $petbreeds_array = array();
+            $petbirthday_array = array();
+            $specialMarkings = array();
     
             while($rows = $user->fetch_assoc()) {
     
-                $petname = $rows["pet_name"];
                 $petId = $rows["id"];
-    
-                $petnames_array[] = $petname;
+                $petName = $rows["pet_name"];
+                $petBreed = $rows["pet_breed"];
+                $petBirthday = $rows["pet_birthday"];
+                $specialMarking = $rows["special_marking"];
+              
                 $petId_array[] = $petId;
+                $petnames_array[] = $petName;
+                $petbreeds_array[] = $petBreed;
+                $petbirthday_array[] = $petBirthday;
+                $specialMarkings[] = $specialMarking;
             
             } 
       
@@ -104,7 +113,7 @@
        
             &nbsp;
                 
-          <?php if(!isset($_SESSION['UserLogin'])){?>
+          <?php if(!isset($_SESSION['UserLogin'])){ ?>
 
             <li class="nav-item" data-toggle="modal" data-target="#signUp">
                <span>SignUp</span>
@@ -209,6 +218,7 @@
 
     <form action="" method="post">
         <div class="modal-body">
+            <div class="login_failed"></div>
             <div class="form-outline mt-3">
                 <input class="form-control" type="email" name="email" id="login-email formControlDefault" required>
                 <label class="form-label" for="email">E-mail</label>
@@ -242,41 +252,132 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="overflow-x: hidden;">
           <form >
-             <div class='container-fluid'>
-                <div class='row '>
-                     
-                   
-                      <select name="users" onchange="petData(this.value)">
-                          <?php foreach(array_combine($petnames_array, $petId_array ) as $petname_array => $pet_Id): ?>
+            <div class="container d-flex justify-content-end">
+              <div class="row">
+                <div class="col-lg-12">
+                      <select class="form-select form-select-sm" name="users" onchange="petData(this.value)" aria-label="Default select example">
+                    
+                          <?php foreach( $petnames_array as $index => $pet_name): ?>
              
-                             <option value="<?php echo $pet_Id;?>"><?php echo $petname_array ?></option>
+                             <option value="<?php echo $petId_array[$index];?>"><?php echo $pet_name ?></option>
 
                           <?php endforeach ?>
-                        </select>
-  
-                        <div class="profilebody">
-
+                      </select>
+                  </div>
+              </div>
+            </div>
+             <div class='container d-flex justify-content-center'>
+                <div class='row'>
+                    <div class="col-lg-12">
+                      <!-- Ajax Output Request  -->
+                      <div class="record-details">
+                      <div class='record-image'>
+                          <img src='https://via.placeholder.com/150' alt=''>
                       </div>
+                      <div class='info-record'>
+                          <h2><?php echo empty($petnames_array) ? "Pet name": $petnames_array[0] ?></h2>
+                          <span><?php echo empty($petbreeds_array) ? "Pet breed": $petbreeds_array[0] ?></span>
+                          <span><?php echo empty($petbirthday_array) ? "Pet birthday": $petbirthday_array[0] ?></span>
+                          <span><?php echo empty($specialMarkings) ? "Special Marking": $specialMarkings[0] ?></span>
+                      </div>
+                      </div>
+                      <div class="record-vaccination pt-5">
+                        <div class="container-fluid p-0">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>Recommended Vaccination Schedule From the Humane Society</p>
+                                </div>
+                                <div class="table-wrapper">
+                                <table class="table table-bordered text-center">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Vaccine</th>
+                                        <th scope="col" colspan="5">Immunization Dates</th>
+                                        <th scope="col" colspan="2">Veterinarian</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">1</th>
+                                        <td >Mark</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td colspan="2"></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td colspan="2"></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td colspan="2"></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">4</th>
+                                        <td>Larry</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td colspan="2"></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">5</th>
+                                        <td>Larry</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td colspan="2"></td>
+                                        </tr>
+                                        <tr>
+                                        <th scope="row">6</th>
+                                        <td>Larry</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td colspan="2"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- End of Ajax Output Request -->
+                    </div>
                   </div>  
               </div>
           </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary closexx" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 
-
-
-
-
-
-
 </nav>
-
-

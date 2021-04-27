@@ -15,6 +15,39 @@
     background-color: #d3d3d3d3;
 }
 
+/* Header */
+
+
+/*------------------- Header's Modal -------------------*/
+
+ /* Profile Modal  */
+
+.record-details {
+    display: grid;
+    grid-template-columns: 5fr 15fr;
+    grid-gap: 0;
+}
+
+.record-details .info-record span {
+    display: block;
+}
+
+.record-vaccination .table-wrapper {
+    overflow-x: auto;
+}
+
+.record-vaccination .table-wrapper table {
+    width: 100%;
+    table-layout: fixed; 
+}
+
+@media only screen and (max-width: 991px) {
+    .record-vaccination .table-wrapper table {
+        width: 300%;
+    }
+}
+
+
 /* Appointment Page */
 
 .appointment-form .pet-image img{

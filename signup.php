@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
     $checkrows = mysqli_num_rows($check);
 
     if($checkrows > 0){
-        echo "Email entered was already registered";
+        echo "Email enter was already registered";
     } else {
  
         $sql = "INSERT INTO `user_reg`(`first_name`, `last_name`, `birth_day`, `address`, `phone_num`, `gender`, `email`, `password`) VALUES ('$fname', '$lname', '$birthday', '$address', '$phoneNum', '$gender', '$email', '$password')";
@@ -26,6 +26,7 @@ if(isset($_POST['submit'])){
         $con->query($sql) or die ($con->error);
 
         // echo header("location: index.php");
+        header("Location: index.php");
     }
 }
 

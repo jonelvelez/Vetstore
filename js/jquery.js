@@ -13,11 +13,6 @@ $(document).ready(function(){
 
 var closexx = document.querySelector('.closexx');
 
-closexx.addEventListener('click', () => {
-
-  console.log('modal');
-
-});
 
 
 

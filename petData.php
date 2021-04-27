@@ -10,11 +10,7 @@ if(!isset($_SESSION)){
 include_once("connections/connection.php");
 $con = connection();
 
-//Client User ID
-
-// $userId = $_SESSION['UserId'];
-
-
+//Ajax Data Request
 $petId = $_GET['q'];
 
     $sqlPetData = "SELECT * FROM pet_reg WHERE id = '$petId'";
@@ -29,16 +25,18 @@ $petId = $_GET['q'];
             $petBirthday = $rows["pet_birthday"];
             $specialMarking = $rows["special_marking"];
 
-            // $petsName = str_split($petName);
-            // $_SESSION['petName'] = $petName;
-            
-            echo "<p>" . $petName ."</p>","<p>". $petBreed . "</p>";
-
-
-        }
+                echo "<div class='record-image'>
+                            <img src='https://via.placeholder.com/150' alt=''>
+                        </div>
+                        <div class='info-record'>
+                            <h2>". $petName ."</h2>
+                            <span>". $petBreed ."</span>
+                            <span>". $petBirthday ."</span>
+                            <span>". $specialMarking ."</span>
+                        </div>" ;  
+                }
      
-    }
-    
+        }
     
 ?>
 
