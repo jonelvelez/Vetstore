@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css" integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <title>Homepage</title>
 </head>
@@ -82,16 +83,13 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Contact</a>
       </li>
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </div>
-      </li> -->
+      <?php if(isset($_SESSION['UserLogin']) && $_SESSION['Access'] == "admin")  { ?>
+    
+      <li class="nav-item">
+        <a class="nav-link" href="administrator.php">Administrator</a>
+      </li>
+
+      <?php } ?>
     </ul>
     <form class="form-inline my-2 my-lg-0">
         <ul class="navbar-nav mr-auto">
@@ -273,15 +271,15 @@
                     <div class="col-lg-12">
                       <!-- Ajax Output Request  -->
                       <div class="record-details">
-                      <div class='record-image'>
-                          <img src='https://via.placeholder.com/150' alt=''>
-                      </div>
-                      <div class='info-record'>
-                          <h2><?php echo empty($petnames_array) ? "Pet name": $petnames_array[0] ?></h2>
-                          <span><?php echo empty($petbreeds_array) ? "Pet breed": $petbreeds_array[0] ?></span>
-                          <span><?php echo empty($petbirthday_array) ? "Pet birthday": $petbirthday_array[0] ?></span>
-                          <span><?php echo empty($specialMarkings) ? "Special Marking": $specialMarkings[0] ?></span>
-                      </div>
+                        <div class='record-image'>
+                            <img src='https://via.placeholder.com/150' alt=''>
+                        </div>
+                        <div class='info-record'>
+                            <h2><?php echo empty($petnames_array) ? "Pet name": $petnames_array[0] ?></h2>
+                            <span><?php echo empty($petbreeds_array) ? "Pet breed": $petbreeds_array[0] ?></span>
+                            <span><?php echo empty($petbirthday_array) ? "Pet birthday": $petbirthday_array[0] ?></span>
+                            <span><?php echo empty($specialMarkings) ? "Special Marking": $specialMarkings[0] ?></span>
+                        </div>
                       </div>
                       <div class="record-vaccination pt-5">
                         <div class="container-fluid p-0">
@@ -381,3 +379,4 @@
 </div>
 
 </nav>
+

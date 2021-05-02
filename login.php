@@ -1,3 +1,4 @@
+
 <?php 
 
 if(!isset($_SESSION)){
@@ -23,6 +24,7 @@ if(isset($_POST['login'])){
         $_SESSION['UserLogin'] = $row['first_name'];
         $_SESSION['Userlname'] = $row['last_name'];
         $_SESSION['UserEmail'] = $row['email'];
+        $_SESSION['Access'] = $row['access'];
   
     } else {
 

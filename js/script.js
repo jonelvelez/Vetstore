@@ -1,7 +1,8 @@
-// Create Ajax Request for Pet Data
+
 // document.querySelector("#navlogin").addEventListener("click", sample);
 // window.addEventListener("load", sample);
 
+    // Create Ajax Request for Modal Pet Data
     function petData(str) {
         if (str=="") {
            document.querySelector(".record-details").innerHTML="";
@@ -13,27 +14,66 @@
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.querySelector(".record-details").innerHTML=this.responseText;
+              
             }
         };
             //OPEN - type,      url/file,     async
         xhr.open('GET', "petData.php?q="+str, true);
         xhr.send();
     }
+
+    // let btn_login = document.querySelector('#btn-login')
+
+    // btn_login.addEventListener('click',(e) => {
+
+    //     e.preventDefault();
+
+
+    // });
    
+    // Create Ajax Request for Table client users
+    // window.addEventListener('load', client_users);
 
-    document.querySelector("#btn-login").addEventListener("click", login_failed);
+    // function client_users() {
 
-    function login_failed(){
+    //     let xhr = new XMLHttpRequest();
 
-        let xhr = new XMLHttpRequest();
+    //     xhr.onreadystatechange = function() {
+    //         if(this.readyState == 4 && this.status == 200) {
+    //             document.querySelector(".").innerHTML = this.responseText;          
+    //         }
+    //     };
 
-        xhr.onreadystatechange = function() {
-            if (this.status == 200) {
-                document.querySelector(".login_failed").innerHTML = this.responseText;
-                // console.log(this.responseText);
+    //     xhr.open('GET', "", true);
+    //     xhr.send();
+
+    // }
+   
+    // Admin Search 
+    let search_menu = document.querySelector('.search-menu');
+
+    search_menu.addEventListener('keyup', () => {
+        let input, filter, tr, table_data, txtValue
+
+        input = document.querySelector(".search-menu");
+        filter = input.value.toUpperCase();
+        tr = document.querySelector(".users-details");
+        table_data = document.querySelectorAll(".users-details td:nth-child(2)")
+
+        Array.from(table_data).forEach(function (td){
+
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        
+                td.parentNode.style.display = "";
+            
+            } else {
+  
+                td.parentNode.style.display = "none";
             }
-        };
 
-        xhr.open('GET', 'login.php', true);
-        xhr.send();
-    }
+        });
+      
+    });
+
+
