@@ -102,20 +102,20 @@ $con = connection();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/royalcanin.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="images/royalcanin.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="images/royalcanin.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="images/royalcanin.jpg" alt=""></div>
-           
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/royalcanin.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="images/royalcanin.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="images/royalcanin.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="images/royalcanin.jpg" alt=""></div>
+            
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
                 </div>
             </div>
         </div>

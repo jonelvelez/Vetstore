@@ -247,7 +247,7 @@ $row = $pets->fetch_assoc();
                     <td><?php echo $row['special_marking'] ?></td>
                     <td><?php echo $row['user_fname'] .' '. $row['user_lname'] ?></td>
                     <td><?php echo $row['user_email'] ?></td>
-                    <td><a href="vetcardUpdate.php?ID=<?php echo $row['id']; ?>">View</a></th>
+                    <td><a class="okay" href="vetcardUpdate.php?ID=<?php echo $row['id']; ?>">View</a></th>
                     </tr>
                 <?php } while($row = $pets->fetch_assoc()) ?> 
                 </tbody>

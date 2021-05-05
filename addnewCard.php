@@ -14,4 +14,9 @@
 
         $con->query($new_healthCard) or die ($con->error);
 
+        $page = $_SERVER['REQUEST_URI'];
+        echo '<script type="text/javascript">';
+        echo 'window.location.href="'.$page.'";';
+        echo '</script>';
+
     }

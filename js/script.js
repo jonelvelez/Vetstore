@@ -14,40 +14,13 @@
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.querySelector(".record-details").innerHTML=this.responseText;
-              
+             
             }
         };
             //OPEN - type,      url/file,     async
         xhr.open('GET', "petData.php?q="+str, true);
         xhr.send();
     }
-
-    // let btn_login = document.querySelector('#btn-login')
-
-    // btn_login.addEventListener('click',(e) => {
-
-    //     e.preventDefault();
-
-
-    // });
-   
-    // Create Ajax Request for Table client users
-    // window.addEventListener('load', client_users);
-
-    // function client_users() {
-
-    //     let xhr = new XMLHttpRequest();
-
-    //     xhr.onreadystatechange = function() {
-    //         if(this.readyState == 4 && this.status == 200) {
-    //             document.querySelector(".").innerHTML = this.responseText;          
-    //         }
-    //     };
-
-    //     xhr.open('GET', "", true);
-    //     xhr.send();
-
-    // }
    
     // Admin Search 
     let search_menu = document.querySelector('.search-menu');
@@ -60,7 +33,7 @@
         tr = document.querySelector(".users-details");
         table_data = document.querySelectorAll(".users-details td:nth-child(2)")
 
-        Array.from(table_data).forEach(function (td){
+        Array.from(table_data).forEach((td) =>{
 
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
