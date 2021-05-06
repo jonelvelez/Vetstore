@@ -538,4 +538,84 @@
   .chiller-theme .sidebar-footer>a:last-child {
       border-right: none;
   }
+
+  /*----------------------------- Arrow Prev or Next -------------------------------------------------*/
+
+  .arrow + .arrow {
+    margin-left: 1rem;
+  }
+  
+  .arrow {
+    cursor: pointer;
+    display: inline-block;
+    height: 2rem;
+    overflow: hidden;
+    transition: all 0.25s;
+    white-space: nowrap;
+    width: 2rem;
+  }
+  .arrow::before {
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-clip-path: polygon(73% 57%, 73% 57%, 78.4% 50%, 73% 43%, 73% 43%, 50% 14%, 60.8% 0%, 100% 50%, 60.8% 100%, 50% 86%);
+            clip-path: polygon(73% 57%, 73% 57%, 78.4% 50%, 73% 43%, 73% 43%, 50% 14%, 60.8% 0%, 100% 50%, 60.8% 100%, 50% 86%);
+    content: "";
+    display: block;
+    height: 2rem;
+    left: -0.37rem;
+    position: relative;
+    transition: all 0.25s;
+    width: 1.48rem;
+  }
+  .arrow:hover::before {
+    background-color: #1f7bc1;
+    -webkit-clip-path: polygon(73% 57%, 0 57%, 5.4% 50%, 10.8% 43%, 73% 43%, 50% 14%, 60.8% 0%, 100% 50%, 60.8% 100%, 50% 86%);
+            clip-path: polygon(73% 57%, 0 57%, 5.4% 50%, 10.8% 43%, 73% 43%, 50% 14%, 60.8% 0%, 100% 50%, 60.8% 100%, 50% 86%);
+    left: 0.26rem;
+  }
+  .arrow.circle {
+    border: 0.25rem rgba(0, 0, 0, 0.4) solid;
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 3.5rem;
+    padding: 0.5rem;
+    transition: all 0.25s;
+    width: 3.5rem;
+  }
+  .arrow.circle::before {
+    left: 0;
+  }
+  .arrow.circle:hover {
+    border: 0.25rem #1f7bc1 solid;
+    transform: scale(1.1);
+  }
+  .arrow.circle:hover::before {
+    background-color: #1f7bc1;
+    left: 0.26rem;
+  }
+  .arrow.hexagon {
+    background-color: #1f7bc1;
+    -webkit-clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%);
+            clip-path: polygon(0% 50%, 25% 100%, 75% 100%, 100% 50%, 75% 0%, 25% 0%);
+    padding: 0.75rem 0.86625rem;
+    width: 4.0425rem;
+    height: 3.5rem;
+    transition: all 0.25s;
+  }
+  .arrow.hexagon::before {
+    background-color: white;
+    left: 20%;
+  }
+  .arrow.hexagon:hover {
+    background-color: #14517f;
+    transform: scale(1.1);
+  }
+  .arrow.hexagon:hover::before {
+    left: 30%;
+  }
+  .arrow.previous {
+    transform: rotate(180deg);
+  }
+  .arrow.previous.hexagon:hover, .arrow.previous.circle:hover {
+    transform: rotate(180deg) scale(1.1);
+  }
   

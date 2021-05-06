@@ -1,17 +1,19 @@
 $(document).ready(function(){
 
-    $('#login').modal({
-        backdrop: 'static',
-        keyboard: false
-    })
+//Login Modal
+$('#login').modal({
+    backdrop: 'static',
+    keyboard: false
+})
 
- $( function() {
+//Date Picker
+$( function() {
     $( "#datepicker" ).datepicker();
-  });
+});
   
-
-  $(".sidebar-dropdown > a").click(function() {
-    $(".sidebar-submenu").slideUp(200);
+//Admin Sidebar
+$(".sidebar-dropdown > a").click(function() {
+  $(".sidebar-submenu").slideUp(200);
     if (
       $(this)
         .parent()
@@ -30,7 +32,7 @@ $(document).ready(function(){
         .parent()
         .addClass("active");
     }
-  });
+});
   
   $("#close-sidebar").click(function() {
     $(".page-wrapper").removeClass("toggled");
@@ -39,7 +41,24 @@ $(document).ready(function(){
     $(".page-wrapper").addClass("toggled");
   });
 
+//Healthcard Input tags Disabled
+    let inputs_tag = $(".healthcard-container input");
+    let inputs = $(".healthcard-container input");
+
+    for(i = 0; i <= inputs_tag.length; i++){
+
+      if (!$(inputs[i]).val()) {
+        $(inputs_tag[i]).attr('readonly', false);
+      } else {
+        $(inputs_tag[i]).attr('readonly', true);
+        $(inputs_tag[i]).addClass('bg-light');
+      }
+
+    }
+  
 });
+
+
 
 
 

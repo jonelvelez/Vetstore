@@ -25,7 +25,7 @@ $healthcard_data = $con->query($healthcard_sql) or die ($con->error);
 //Update all client healthcard
 if(isset($_POST['updateCard'])){
 
-      $healthcards = $_SESSION['GLOBAL'];
+      $healthcards = $_SESSION['HEALTHCARD_IDs'];
   
       //call updatecard.php function
       updatecard();
@@ -246,7 +246,10 @@ if(isset($_POST['addnewcard'])){
   <!-- sidebar-wrapper  -->
       <div class="page-content">
         <div class="card">
-              <h5 class="card-header">Breeder: <?php echo $pet['user_fname'] ?> <?php echo $pet['user_lname'] ?></h5>
+              <a href="/vetstore/administrator.php">
+                <div class="arrow previous"><span class="sr-only">Previous</span></div>
+              </a>
+              <h5 class="card-header text-right">Breeder: <?php echo $pet['user_fname'] ?> <?php echo $pet['user_lname'] ?></h5>
               <div class="card-body">
                   <div class="card_record">
                       <div class="card_record-image">
@@ -266,7 +269,7 @@ if(isset($_POST['addnewcard'])){
                                   <p>Recommended Vaccination Schedule From the Humane Society</p>
                               </div>
                               <div class="col-lg-6">
-                                <form action="" method="post">
+                                <form action="" method="post" class="text-right">
                                  
                                   <input class="btn btn-primary" type="submit" name="addnewcard" method="POST" value="create new card">
 
@@ -287,12 +290,16 @@ if(isset($_POST['addnewcard'])){
                                                           //Fetch all client healthcard 
                                                           $healthcard_update = array();
 
+                                                          //
+                                                          $single_variable = array();
                                                           $i = 0;
                                                           while($row_IDs = $healthcard_data->fetch_assoc()) {
                                                             
                                                             $healthcard_ID = $row_IDs['healthcard_id'];
                                                       
                                                             $healthcard_update[] = $row_IDs['pet_id'];
+
+                                                            $single_variable[] = $row_IDs['healthcard_id'];
 
                                                             $fetch_IDs = "SELECT * FROM pet_healthcard WHERE healthcard_id = $healthcard_ID ";
                                                             $IDs = $con->query($fetch_IDs) or die ($con->error);
@@ -555,7 +562,7 @@ if(isset($_POST['addnewcard'])){
 
                                               //GLOBAL Variable for Updatecard.php
                                               $_SESSION['UPDATE_CARD'] = $healthcard_update;
-
+                                              $_SESSION['HEALTHCARD_IDs'] = $single_variable;
                                               ?>
 
                                                 </div>
