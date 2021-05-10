@@ -42,6 +42,8 @@ $(".sidebar-dropdown > a").click(function() {
   });
 
 //Healthcard Input tags Disabled
+
+  $(window).load(function(){
     let inputs_tag = $(".healthcard-container input");
     let inputs = $(".healthcard-container input");
 
@@ -55,6 +57,8 @@ $(".sidebar-dropdown > a").click(function() {
       }
 
     }
+  });
+  
   
 });
 

@@ -23,9 +23,9 @@
  /* Profile Modal  */
 
 .record-details {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 5fr 15fr;
-    grid-gap: 0;
+    grid-gap: 0; */
 }
 
 .record-details .info-record span {
@@ -618,4 +618,43 @@
   .arrow.previous.hexagon:hover, .arrow.previous.circle:hover {
     transform: rotate(180deg) scale(1.1);
   }
-  
+
+  /*----------------------------- Loading -------------------------------------------------*/
+
+  .loading {
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    background-color: #fff;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .loading img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+
+/*----------------------------- User Details Modal -------------------------------------------------*/
+
+
+.petcard-modal .modal-content {
+  height: 80vh;
+}
+
+.petcard-modal .modal-content .table-wrapper {
+  padding-top: 20px;
+}
+
+  @media (min-width: 992px){
+    .modal-lg, .modal-xl {
+      max-width: 80% !important;
+  }
+}
+
+

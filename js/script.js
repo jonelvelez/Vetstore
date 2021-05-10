@@ -22,7 +22,7 @@
         xhr.send();
     }
    
-    // Admin Search 
+    // Search Pet Name
     let search_menu = document.querySelector('.search-menu');
 
     search_menu.addEventListener('keyup', () => {

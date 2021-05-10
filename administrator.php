@@ -1,3 +1,5 @@
+<?php include 'header.php'; ?>
+
 <?php 
 
 include_once("connections/connection.php");
@@ -9,12 +11,21 @@ $pets = $con->query($sql) or die ($con->error);
 $row = $pets->fetch_assoc();
 
 
+//Restriction 
+$user = $_SESSION['Access'];
+
+if($user != "admin"){
+  http_response_code(404);
+  echo "Restricted Page";
+  // include('my_404.php');
+  die();
+}
+
 
 ?>
 
 
 
-<?php include 'header.php'; ?>
 
 
 <div class="page-wrapper chiller-theme toggled">
@@ -35,8 +46,8 @@ $row = $pets->fetch_assoc();
             alt="User picture">
         </div>
         <div class="user-info">
-          <span class="user-name">Jhon
-            <strong>Smith</strong>
+          <span class="user-name"><?php echo $_SESSION['UserLogin']; ?>
+            <strong><?php echo $_SESSION['Userlname']; ?></strong>
           </span>
           <span class="user-role">Administrator</span>
           <span class="user-status">
@@ -49,7 +60,7 @@ $row = $pets->fetch_assoc();
       <div class="sidebar-search">
         <div>
           <div class="input-group">
-            <input type="text" class="form-control search-menu" placeholder="Search...">
+            <input type="text" class="form-control search-menu" placeholder="Pet Name">
             <div class="input-group-append">
               <span class="input-group-text">
                 <i class="fa fa-search" aria-hidden="true"></i>
