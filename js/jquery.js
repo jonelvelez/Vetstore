@@ -58,7 +58,14 @@ $(".sidebar-dropdown > a").click(function() {
 
     }
   });
+
+  let inputs = $(".petcard-modal td input");
   
+  Array.from(inputs).forEach((input) => {
+    $(input).attr('readonly', true);
+
+  });
+
   
 });
 

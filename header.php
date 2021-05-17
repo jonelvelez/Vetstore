@@ -56,6 +56,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
     <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <title>Homepage</title>
 </head>
@@ -280,10 +281,10 @@
                                       <img src='https://via.placeholder.com/150' alt=''>
                                   </div>
                                   <div class='col-lg-10 info-record'>
-                                      <h2><?php echo empty($petnames_array) ? "Pet name": end($petnames_array) ?></h2>
-                                      <span><?php echo empty($petbreeds_array) ? "Pet breed": end($petbreeds_array) ?></span>
-                                      <span><?php echo empty($petbirthday_array) ? "Pet birthday": end($petbirthday_array) ?></span>
-                                      <span><?php echo empty($specialMarkings) ? "Special Marking": end($specialMarkings) ?></span>
+                                      <h2>Name: <?php echo empty($petnames_array) ? : end($petnames_array) ?></h2>
+                                      <span>Pet breed: <?php echo empty($petbreeds_array) ? : end($petbreeds_array) ?></span>
+                                      <span>Pet birthday: <?php echo empty($petbirthday_array) ? : end($petbirthday_array) ?></span>
+                                      <span>Special Marking: <?php echo empty($specialMarkings) ? : end($specialMarkings) ?></span>
                                   </div>
 
                                   <?php 
@@ -380,174 +381,174 @@
                                           $v_vet6 = $row_item['v_row6_vet'];
                               
                                         
-                                                                                                  echo "<div class='col-lg-12'><div class='table-wrapper'>
-                                                                                                              <table class='table table-bordered text-center'>
-                                                                                                              <thead>
-                                                                                                              <tr>
-                                                                                                                  <th scope='col' colspan='6'>card number: $i<h2>Anti - Parasitics</h2></th>
-                                                                                                              </tr>
-                                                                                                          </thead>
-                                                                                                          <thead class='thead-dark'>
-                                                                                                              <tr>
-                                                                                                                  <th scope='col'>Date</th>
-                                                                                                                  <th scope='col'>Weight</th>
-                                                                                                                  <th scope='col'>Against</th>
-                                                                                                                  <th scope='col'>Manufacturer</th>
-                                                                                                                  <th scope='col'>LDT Number</th>
-                                                                                                                  <th scope='col'>Veterinarian</th>
-                                                                                                              </tr>
-                                                                                                          </thead>
-                                                                                                          <tbody>
-                                                                                                              <tr>
-                                                                                                      
-                                                                                                                  <td><input type='date' name='d_row1_date$i' value='$d_data1';></td>
-                                                                                                                  <td><input type='text' name='d_row1_weight$i' value='$d_weight1'></td>
-                                                                                                                  <td><input type='text' name='d_row1_against$i' value='$d_against1'></td>
-                                                                                                                  <td><input type='text' name='d_row1_manufacturer$i' value='$d_manufacturer1'></td>
-                                                                                                                  <td><input type='text' name='d_row1_ldtnumber$i' value='$d_dtnumber1'></td>
-                                                                                                                  <td><input type='text' name='d_row1_vet$i' value='$d_vet1'></td>
-                                                                                                              
-                                                                                                              <tr>
-                                                                                                              <tr>
-                                                                                                      
-                                                                                                              <td><input type='date' name='d_row2_date$i' value='$d_data2';></td>
-                                                                                                              <td><input type='text' name='d_row2_weight$i' value='$d_weight2'></td>
-                                                                                                              <td><input type='text' name='d_row2_against$i' value='$d_against2'></td>
-                                                                                                              <td><input type='text' name='d_row2_manufacturer$i' value='$d_manufacturer2'></td>
-                                                                                                              <td><input type='text' name='d_row2_ldtnumber$i' value='$d_dtnumber2'></td>
-                                                                                                              <td><input type='text' name='d_row2_vet$i' value='$d_vet2'></td>
-                                                                                                              
-                                                                                                              <tr>
-                                                                                                              </tr>
-                                                                                                              <tr>
-                                                                                                              
-                                                                                                              <td><input type='date' name='d_row3_date$i' value='$d_data3';></td>
-                                                                                                              <td><input type='text' name='d_row3_weight$i' value='$d_weight3'></td>
-                                                                                                              <td><input type='text' name='d_row3_against$i' value='$d_against3'></td>
-                                                                                                              <td><input type='text' name='d_row3_manufacturer$i' value='$d_manufacturer3'></td>
-                                                                                                              <td><input type='text' name='d_row3_ldtnumber$i' value='$d_dtnumber3'></td>
-                                                                                                              <td><input type='text' name='d_row3_vet$i' value='$d_vet3'></td>
-                              
-                                                                                                              </tr>
-                                                                                                              <tr>
-                                                                                                              
-                                                                                                              <td><input type='date' name='d_row4_date$i' value='$d_data4'></td>
-                                                                                                              <td><input type='text' name='d_row4_weight$i' value='$d_weight4'></td>
-                                                                                                              <td><input type='text' name='d_row4_against$i' value='$d_against4'></td>
-                                                                                                              <td><input type='text' name='d_row4_manufacturer$i' value='$d_manufacturer4'></td>
-                                                                                                              <td><input type='text' name='d_row4_ldtnumber$i'value='$d_dtnumber4'></td>
-                                                                                                              <td><input type='text' name='d_row4_vet$i' value='$d_vet4'></td>
-                              
-                                                                                                              </tr>
-                                                                                                              <tr>
-                              
-                                                                                                              <td><input type='date' name='d_row5_date$i' value='$d_data5'></td>
-                                                                                                              <td><input type='text' name='d_row5_weight$i' value='$d_weight5'></td>
-                                                                                                              <td><input type='text' name='d_row5_against$i' value='$d_against5'></td>
-                                                                                                              <td><input type='text' name='d_row5_manufacturer$i' value='$d_manufacturer5'></td>
-                                                                                                              <td><input type='text' name='d_row5_ldtnumber$i' value='$d_dtnumber5'></td>
-                                                                                                              <td><input type='text' name='d_row5_vet$i' value='$d_vet5'></td>
-                              
-                                                                                                              </tr>
-                                                                                                              <tr>
-                                                                                                              
-                                                                                                              <td><input type='date' name='d_row6_date$i' value='$d_data6'></td>
-                                                                                                              <td><input type='text' name='d_row6_weight$i' value='$d_weight6'></td>
-                                                                                                              <td><input type='text' name='d_row6_against$i' value='$d_against6'></td>
-                                                                                                              <td><input type='text' name='d_row6_manufacturer$i' value='$d_manufacturer6'></td>
-                                                                                                              <td><input type='text' name='d_row6_ldtnumber$i'value='$d_dtnumber6'></td>
-                                                                                                              <td><input type='text' name='d_row6_vet$i' value='$d_vet6'></td>
-                              
-                                                                                                              </tr>
-                                                                                                          </tbody>
-                                                                                                      </table>
-                                                                                                          </div>
-                                                                                                  <div class='table-wrapper'>
-                                                                                                      <table class='table table-bordered text-center'>
-                                                                                                          <thead>
-                                                                                                              <tr>
-                                                                                                                  <th scope='col' colspan='6'><h2>Vaccine</h2></th>
-                                                                                                              </tr>
-                                                                                                              </thead>
-                                                                                                          <thead class='thead-dark'>
-                                                                                                              <tr>
-                                                                                                                  <th scope='col'>Date</th>
-                                                                                                                  <th scope='col'>Weight</th>
-                                                                                                                  <th scope='col'>Against</th>
-                                                                                                                  <th scope='col'>Manufacturer</th>
-                                                                                                                  <th scope='col'>LDT Number</th>
-                                                                                                                  <th scope='col'>Veterinarian</th>
-                                                                                                              </tr>
-                                                                                                              </thead>
-                                                                                                              <tbody>
-                                                                                                              <tr>
-                                                                                                      
-                                                                                                              <td><input type='date' name='v_row1_date$i' value='$v_data1';></td>
-                                                                                                              <td><input type='text' name='v_row1_weight$i' value='$v_weight1'></td>
-                                                                                                              <td><input type='text' name='v_row1_against$i' value='$v_against1'></td>
-                                                                                                              <td><input type='text' name='v_row1_manufacturer$i' value='$v_manufacturer1'></td>
-                                                                                                              <td><input type='text' name='v_row1_ldtnumber$i'value='$v_dtnumber1'></td>
-                                                                                                              <td><input type='text' name='v_row1_vet$i' value='$v_vet1'></td>
-                                                                                                              
-                                                                                                              <tr>
-                                                                                                              <tr>
-                                                                                                              
-                                                                                                              <td><input type='date' name='v_row2_date$i' value='$v_data2';></td>
-                                                                                                              <td><input type='text' name='v_row2_weight$i' value='$v_weight2'></td>
-                                                                                                              <td><input type='text' name='v_row2_against$i' value='$v_against2'></td>
-                                                                                                              <td><input type='text' name='v_row2_manufacturer$i' value='$v_manufacturer2'></td>
-                                                                                                              <td><input type='text' name='v_row2_ldtnumber$i' value='$v_dtnumber2'></td>
-                                                                                                              <td><input type='text' name='v_row2_vet$i' value='$v_vet2'></td>
-                                                                                                              
-                                                                                                              <tr>
-                                                                                                              </tr>
-                                                                                                              <tr>
-                                                                                                              
-                                                                                                              <td><input type='date' name='v_row3_date$i' value='$v_data3';></td>
-                                                                                                              <td><input type='text' name='v_row3_weight$i' value='$v_weight3'></td>
-                                                                                                              <td><input type='text' name='v_row3_against$i' value='$v_against3'></td>
-                                                                                                              <td><input type='text' name='v_row3_manufacturer$i' value='$v_manufacturer3'></td>
-                                                                                                              <td><input type='text' name='v_row3_ldtnumber$i' value='$v_dtnumber3'></td>
-                                                                                                              <td><input type='text' name='v_row3_vet$i' value='$v_vet3'></td>
-                                                                                                              
-                                                                                                              </tr>
-                                                                                                              <tr>
-                                                                                                              
-                                                                                                              <td><input type='date' name='v_row4_date$i' value='$v_data4'></td>
-                                                                                                              <td><input type='text' name='v_row4_weight$i' value='$v_weight4'></td>
-                                                                                                              <td><input type='text' name='v_row4_against$i' value='$v_against4'></td>
-                                                                                                              <td><input type='text' name='v_row4_manufacturer$i' value='$v_manufacturer4'></td>
-                                                                                                              <td><input type='text' name='v_row4_ldtnumber$i' value='$v_dtnumber4'></td>
-                                                                                                              <td><input type='text' name='v_row4_vet$i' value='$v_vet4'></td>
-                                                                                                              
-                                                                                                              </tr>
-                                                                                                              <tr>
-                                                                                                              
-                                                                                                              <td><input type='date' name='v_row5_date$i' value='$v_data5'></td>
-                                                                                                              <td><input type='text' name='v_row5_weight$i' value='$v_weight5'></td>
-                                                                                                              <td><input type='text' name='v_row5_against$i' value='$v_against5'></td>
-                                                                                                              <td><input type='text' name='v_row5_manufacturer$i' value='$v_manufacturer5'></td>
-                                                                                                              <td><input type='text' name='v_row5_ldtnumber$i' value='$v_dtnumber5'></td>
-                                                                                                              <td><input type='text' name='v_row5_vet$i' value='$v_vet5'></td>
-                                                                                                              
-                                                                                                              </tr>
-                                                                                                              <tr>
-                                                                                                              
-                                                                                                              <td><input type='date' name='v_row6_date$i' value='$v_data6'></td>
-                                                                                                              <td><input type='text' name='v_row6_weight$i' value='$v_weight6'></td>
-                                                                                                              <td><input type='text' name='v_row6_against$i' value='$v_against6'></td>
-                                                                                                              <td><input type='text' name='v_row6_manufacturer$i' value='$v_manufacturer6'></td>
-                                                                                                              <td><input type='text' name='v_row6_ldtnumber$i' value='$v_dtnumber6'></td>
-                                                                                                              <td><input type='text' name='v_row6_vet$i' value='$v_vet6'></td>
-                                                                                                              
-                                                                                                              </tr>
-                                                                                                          </tbody>
-                                                                                                      </table>
-                                                                                                  </div>
-                                                                                              </div>
-                                                                                             ";
-                              
-                                                                                        $i++;
+                                          echo "<div class='col-lg-12'><div class='table-wrapper'>
+                                          <table class='table table-bordered text-center'>
+                                          <thead>
+                                          <tr>
+                                              <th scope='col' colspan='6'>card number: $i<h2>Anti - Parasitics</h2></th>
+                                          </tr>
+                                      </thead>
+                                      <thead class='thead-dark'>
+                                          <tr>
+                                              <th scope='col'>Date</th>
+                                              <th scope='col'>Weight</th>
+                                              <th scope='col'>Against</th>
+                                              <th scope='col'>Manufacturer</th>
+                                              <th scope='col'>LDT Number</th>
+                                              <th scope='col'>Veterinarian</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                  
+                                              <td><input type='date' name='d_row1_date$i' value='$d_data1';></td>
+                                              <td><input type='text' name='d_row1_weight$i' value='$d_weight1'></td>
+                                              <td><input type='text' name='d_row1_against$i' value='$d_against1'></td>
+                                              <td><input type='text' name='d_row1_manufacturer$i' value='$d_manufacturer1'></td>
+                                              <td><input type='text' name='d_row1_ldtnumber$i' value='$d_dtnumber1'></td>
+                                              <td><input type='text' name='d_row1_vet$i' value='$d_vet1'></td>
+                                          
+                                          <tr>
+                                          <tr>
+                                  
+                                          <td><input type='date' name='d_row2_date$i' value='$d_data2';></td>
+                                          <td><input type='text' name='d_row2_weight$i' value='$d_weight2'></td>
+                                          <td><input type='text' name='d_row2_against$i' value='$d_against2'></td>
+                                          <td><input type='text' name='d_row2_manufacturer$i' value='$d_manufacturer2'></td>
+                                          <td><input type='text' name='d_row2_ldtnumber$i' value='$d_dtnumber2'></td>
+                                          <td><input type='text' name='d_row2_vet$i' value='$d_vet2'></td>
+                                          
+                                          <tr>
+                                          </tr>
+                                          <tr>
+                                          
+                                          <td><input type='date' name='d_row3_date$i' value='$d_data3';></td>
+                                          <td><input type='text' name='d_row3_weight$i' value='$d_weight3'></td>
+                                          <td><input type='text' name='d_row3_against$i' value='$d_against3'></td>
+                                          <td><input type='text' name='d_row3_manufacturer$i' value='$d_manufacturer3'></td>
+                                          <td><input type='text' name='d_row3_ldtnumber$i' value='$d_dtnumber3'></td>
+                                          <td><input type='text' name='d_row3_vet$i' value='$d_vet3'></td>
+
+                                          </tr>
+                                          <tr>
+                                          
+                                          <td><input type='date' name='d_row4_date$i' value='$d_data4'></td>
+                                          <td><input type='text' name='d_row4_weight$i' value='$d_weight4'></td>
+                                          <td><input type='text' name='d_row4_against$i' value='$d_against4'></td>
+                                          <td><input type='text' name='d_row4_manufacturer$i' value='$d_manufacturer4'></td>
+                                          <td><input type='text' name='d_row4_ldtnumber$i'value='$d_dtnumber4'></td>
+                                          <td><input type='text' name='d_row4_vet$i' value='$d_vet4'></td>
+
+                                          </tr>
+                                          <tr>
+
+                                          <td><input type='date' name='d_row5_date$i' value='$d_data5'></td>
+                                          <td><input type='text' name='d_row5_weight$i' value='$d_weight5'></td>
+                                          <td><input type='text' name='d_row5_against$i' value='$d_against5'></td>
+                                          <td><input type='text' name='d_row5_manufacturer$i' value='$d_manufacturer5'></td>
+                                          <td><input type='text' name='d_row5_ldtnumber$i' value='$d_dtnumber5'></td>
+                                          <td><input type='text' name='d_row5_vet$i' value='$d_vet5'></td>
+
+                                          </tr>
+                                          <tr>
+                                          
+                                          <td><input type='date' name='d_row6_date$i' value='$d_data6'></td>
+                                          <td><input type='text' name='d_row6_weight$i' value='$d_weight6'></td>
+                                          <td><input type='text' name='d_row6_against$i' value='$d_against6'></td>
+                                          <td><input type='text' name='d_row6_manufacturer$i' value='$d_manufacturer6'></td>
+                                          <td><input type='text' name='d_row6_ldtnumber$i'value='$d_dtnumber6'></td>
+                                          <td><input type='text' name='d_row6_vet$i' value='$d_vet6'></td>
+
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                                      </div>
+                              <div class='table-wrapper'>
+                                  <table class='table table-bordered text-center'>
+                                      <thead>
+                                          <tr>
+                                              <th scope='col' colspan='6'><h2>Vaccine</h2></th>
+                                          </tr>
+                                          </thead>
+                                      <thead class='thead-dark'>
+                                          <tr>
+                                              <th scope='col'>Date</th>
+                                              <th scope='col'>Weight</th>
+                                              <th scope='col'>Against</th>
+                                              <th scope='col'>Manufacturer</th>
+                                              <th scope='col'>LDT Number</th>
+                                              <th scope='col'>Veterinarian</th>
+                                          </tr>
+                                          </thead>
+                                          <tbody>
+                                          <tr>
+                                  
+                                          <td><input type='date' name='v_row1_date$i' value='$v_data1';></td>
+                                          <td><input type='text' name='v_row1_weight$i' value='$v_weight1'></td>
+                                          <td><input type='text' name='v_row1_against$i' value='$v_against1'></td>
+                                          <td><input type='text' name='v_row1_manufacturer$i' value='$v_manufacturer1'></td>
+                                          <td><input type='text' name='v_row1_ldtnumber$i'value='$v_dtnumber1'></td>
+                                          <td><input type='text' name='v_row1_vet$i' value='$v_vet1'></td>
+                                          
+                                          <tr>
+                                          <tr>
+                                          
+                                          <td><input type='date' name='v_row2_date$i' value='$v_data2';></td>
+                                          <td><input type='text' name='v_row2_weight$i' value='$v_weight2'></td>
+                                          <td><input type='text' name='v_row2_against$i' value='$v_against2'></td>
+                                          <td><input type='text' name='v_row2_manufacturer$i' value='$v_manufacturer2'></td>
+                                          <td><input type='text' name='v_row2_ldtnumber$i' value='$v_dtnumber2'></td>
+                                          <td><input type='text' name='v_row2_vet$i' value='$v_vet2'></td>
+                                          
+                                          <tr>
+                                          </tr>
+                                          <tr>
+                                          
+                                          <td><input type='date' name='v_row3_date$i' value='$v_data3';></td>
+                                          <td><input type='text' name='v_row3_weight$i' value='$v_weight3'></td>
+                                          <td><input type='text' name='v_row3_against$i' value='$v_against3'></td>
+                                          <td><input type='text' name='v_row3_manufacturer$i' value='$v_manufacturer3'></td>
+                                          <td><input type='text' name='v_row3_ldtnumber$i' value='$v_dtnumber3'></td>
+                                          <td><input type='text' name='v_row3_vet$i' value='$v_vet3'></td>
+                                          
+                                          </tr>
+                                          <tr>
+                                          
+                                          <td><input type='date' name='v_row4_date$i' value='$v_data4'></td>
+                                          <td><input type='text' name='v_row4_weight$i' value='$v_weight4'></td>
+                                          <td><input type='text' name='v_row4_against$i' value='$v_against4'></td>
+                                          <td><input type='text' name='v_row4_manufacturer$i' value='$v_manufacturer4'></td>
+                                          <td><input type='text' name='v_row4_ldtnumber$i' value='$v_dtnumber4'></td>
+                                          <td><input type='text' name='v_row4_vet$i' value='$v_vet4'></td>
+                                          
+                                          </tr>
+                                          <tr>
+                                          
+                                          <td><input type='date' name='v_row5_date$i' value='$v_data5'></td>
+                                          <td><input type='text' name='v_row5_weight$i' value='$v_weight5'></td>
+                                          <td><input type='text' name='v_row5_against$i' value='$v_against5'></td>
+                                          <td><input type='text' name='v_row5_manufacturer$i' value='$v_manufacturer5'></td>
+                                          <td><input type='text' name='v_row5_ldtnumber$i' value='$v_dtnumber5'></td>
+                                          <td><input type='text' name='v_row5_vet$i' value='$v_vet5'></td>
+                                          
+                                          </tr>
+                                          <tr>
+                                          
+                                          <td><input type='date' name='v_row6_date$i' value='$v_data6'></td>
+                                          <td><input type='text' name='v_row6_weight$i' value='$v_weight6'></td>
+                                          <td><input type='text' name='v_row6_against$i' value='$v_against6'></td>
+                                          <td><input type='text' name='v_row6_manufacturer$i' value='$v_manufacturer6'></td>
+                                          <td><input type='text' name='v_row6_ldtnumber$i' value='$v_dtnumber6'></td>
+                                          <td><input type='text' name='v_row6_vet$i' value='$v_vet6'></td>
+                                          
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                         ";
+
+                    $i++;                    
                               
                                       }
                               
