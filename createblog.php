@@ -16,11 +16,12 @@ if(isset($_POST['blogSubmit'])){
 
     // Get all the submitted data from theform
     $blogContent = $_POST['editor1'];
+    $title = $_POST['title'];
     $snippet = $_POST['snippet'];
     $featured_img = $_FILES['featured_img']['name'];
 
     //SQL query
-    $sql = "INSERT INTO `blog_post`(`blog_content`, `snippet`, `featured_image`) VALUES ('$blogContent', '$snippet', '$featured_img')";
+    $sql = "INSERT INTO `blog_post`(`blog_content`, `title`, `snippet`, `featured_image`) VALUES ('$blogContent', '$title', '$snippet', '$featured_img')";
 
     $con->query($sql) or die ($con->error);
 
@@ -62,6 +63,8 @@ if(isset($_POST['blogSubmit'])){
                 <label class="col-md-4" for="">Description</label>
                     <div class="col-lg-12">
                         <textarea class="form-control ckeditor" cols="30" rows="10" id="editor1" name="editor1"></textarea>
+                        <label for="">Title</label><br>
+                        <input name="title" type="text"><br>
                         <label for="">Snippet</label><br>
                         <input name="snippet" type="text"><br>
                         <label for="">Featured Image</label><br>

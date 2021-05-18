@@ -4,6 +4,14 @@
    box-sizing: border-box;
 }
 
+a:hover {
+    text-decoration: none !important;
+}
+
+p {
+  color: #757575;
+}
+
 .img {
     width: 100%;
     height: auto;
@@ -658,3 +666,14 @@
 }
 
 
+/*-------------------------------- Blog Page -------------------------------------------------*/
+
+.blog-group .card .img-wrapper {
+  height: 300px;
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+.blog-group .card .card-body {
+  height: 150px;
+}
