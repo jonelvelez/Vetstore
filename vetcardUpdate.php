@@ -73,7 +73,7 @@ if(isset($_POST['addnewcard'])){
   <!-- Admin Content  -->
       <div class="page-content" oncontextmenu="return false;">
         <div class="card">
-              <a href="/vetstore/administrator.php">
+              <a href="/administrator.php">
                 <div class="arrow previous"><span class="sr-only">Previous</span></div>
               </a>
               <h5 class="card-header text-right">Breeder: <?php echo $pet['user_fname'] ?> <?php echo $pet['user_lname'] ?></h5>

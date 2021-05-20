@@ -29,6 +29,8 @@ $row = $blog_post->fetch_assoc();
 </div>
 
 
+<?php if(!empty($row['blog_id'])) { ?>
+
 <div class="container">
     <div class="row">
         <?php do { ?>
@@ -70,6 +72,8 @@ $row = $blog_post->fetch_assoc();
 
         if($page>1) {
             echo "<a href='blog.php?page=".($page-1)."' class='btn btn-light'><i class='fa fa-arrow-left'></i></a>";
+        } else {
+            echo "<button class='btn btn-light disabled' aria-disabled='true'><i class='fa fa-arrow-left'></i></button>";
         }
 
         for($i=1; $i<$total_page; $i++) {
@@ -78,9 +82,23 @@ $row = $blog_post->fetch_assoc();
 
         if($i > $page) {
             echo "<a href='blog.php?page=".($page+1)."' class='btn btn-light'><i class='fa fa-arrow-right'></i></a>";
+        } else {
+            echo "<button class='btn btn-light disabled' aria-disabled='true'><i class='fa fa-arrow-right'></i></button>";
         }
         
     ?>
+
+        <?php } else { ?>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 pt-5">
+                        <p> No post right now</p>
+                    </div>
+                </div>
+            </div>
+
+        <?php } ?>
+
         </div>
     </div>
 </div>

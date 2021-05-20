@@ -42,7 +42,7 @@
             <span>General</span>
           </li>
           <li class="sidebar-dropdown">
-            <a href="/vetstore/administrator.php">
+            <a href="/administrator.php">
               <i class="fa fa-tachometer-alt"></i>
               <span>Clients</span>
               <span class="badge badge-pill badge-warning">New</span>
@@ -72,10 +72,10 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="/vetstore/createblog.php">Create Blog</a>
+                  <a href="/createblog.php">Create Blog</a>
                 </li>
                 <li>
-                  <a href="#">Edit Blog </a>
+                  <a href="/editblogs.php">Edit Blog </a>
                 </li>
                 <li>
                   <a href="#">Delete Blog</a>

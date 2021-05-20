@@ -19,6 +19,12 @@ if(isset($_POST['login'])){
     $row = $user->fetch_assoc();
     $total = $user->num_rows;   
 
+    $page = $_SERVER['REQUEST_URI'];
+    echo '<script type="text/javascript">';
+    echo 'window.location.href="'.$page.'";';
+    echo '</script>';
+
+
     if($total > 0){
         $_SESSION['UserId'] = $row['id'];
         $_SESSION['UserLogin'] = $row['first_name'];
