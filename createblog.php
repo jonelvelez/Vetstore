@@ -45,6 +45,12 @@ if(isset($_POST['blogSubmit'])){
 
 ?>
 
+<div class="col-lg-12">
+  <div class="loading">
+    <img src="images/loading.gif" alt="">
+  </div>
+</div>
+
 
 <div class="page-wrapper chiller-theme toggled">
   <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
@@ -86,4 +92,6 @@ if(isset($_POST['blogSubmit'])){
         filebrowserUploadMethod: "form"
     }); 
 </script>
+
+<script src='js/loading.js'></script>
 <?php include 'footer.php'; ?>

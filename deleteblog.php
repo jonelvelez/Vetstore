@@ -5,10 +5,9 @@
 include_once("connections/connection.php");
 $con = connection();
 
-
-$sql = "SELECT * FROM pet_reg ORDER BY id DESC";
-$pets = $con->query($sql) or die ($con->error);
-$row = $pets->fetch_assoc();
+$sql = "SELECT * FROM blog_post ORDER BY blog_id DESC";
+$blog_contents = $con->query($sql) or die ($con->error);
+$row = $blog_contents->fetch_assoc();
 
 
 //Restriction 
@@ -25,7 +24,12 @@ if($user != "admin"){
 ?>
 
 
-
+<!-- Loading -->
+<div class="col-lg-12">
+  <div class="loading">
+    <img src="images/loading.gif" alt="">
+  </div>
+</div>
 
 
 <div class="page-wrapper chiller-theme toggled">
@@ -47,12 +51,11 @@ if($user != "admin"){
                 <thead class="thead-dark">
                     <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Pet Name</th>
-                    <th scope="col">Pet Breed</th>
-                    <th scope="col">Pet Birthday</th>
-                    <th scope="col">Special Marking</th>
-                    <th scope="col">Owner</th>
-                    <th scope="col">Owner Email</th>
+                    <th scope="col">Blog Conntent</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Snippet</th>
+                    <th scope="col">Featured Image</th>
+                    <th scope="col">Date Published</th>
                     <th scope="col"></th>
            
                     </tr>
@@ -60,16 +63,15 @@ if($user != "admin"){
                 <tbody>
                 <?php do { ?>
                     <tr class="users-details">
-                    <td><?php echo $row['id'] ?></td>
-                    <td><?php echo $row['pet_name'] ?></td>
-                    <td><?php echo $row['pet_breed'] ?></td>
-                    <td><?php echo $row['pet_birthday'] ?></td>
-                    <td><?php echo $row['special_marking'] ?></td>
-                    <td><?php echo $row['user_fname'] .' '. $row['user_lname'] ?></td>
-                    <td><?php echo $row['user_email'] ?></td>
-                    <td><a class="okay" href="vetcardUpdate.php?ID=<?php echo $row['id']; ?>">View</a></td>
+                    <td><?php echo $row['blog_id'] ?></th>
+                    <td><?php echo $row['blog_content'] ?></td>
+                    <td><?php echo $row['title'] ?></td>
+                    <td><?php echo $row['snippet'] ?></td>
+                    <td><img src="upload/<?php echo $row['featured_image'] ?>" width="50px" alt=""></td>
+                    <td><?php echo $row['date_publish'] ?></td>
+                    <td><a class="okay" href="delete.php?ID=<?php echo $row['blog_id']; ?>">Delete</a></td>
                     </tr>
-                <?php } while($row = $pets->fetch_assoc()) ?> 
+                <?php } while($row = $blog_contents->fetch_assoc()) ?> 
                 </tbody>
             </table>
         </div>
@@ -102,5 +104,5 @@ if($user != "admin"){
   <!-- page-content" -->
 </div>
 
-
+<script src='js/loading.js'></script>
 <?php include 'footer.php'; ?>

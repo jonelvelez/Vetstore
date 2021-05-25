@@ -88,6 +88,7 @@ if(isset($_GET['ID'])) {
                         <input name="snippet" type="text" value="<?php echo $blog_content['snippet'] ?>"><br>
                         <label for="">Featured Image</label><br>
                         <input name="featured_img" type="file"><br>
+                        <img src="upload/<?php echo $blog_content['featured_image'] ?>" width="300px" alt=""><br>
                         <input class="btn btn-primary mt-3" name="blogSubmit" type="submit" method="POST" value="Update">
                     </div>
                 </div>

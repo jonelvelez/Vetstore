@@ -78,7 +78,7 @@
                   <a href="/editblogs.php">Edit Blog </a>
                 </li>
                 <li>
-                  <a href="#">Delete Blog</a>
+                  <a href="/deleteblog.php">Delete Blog</a>
                 </li>
               </ul>
             </div>
