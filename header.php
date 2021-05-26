@@ -106,8 +106,13 @@
               </li>
 
               <?php } else{ ?>
-                
+
               <li id="navlogin" class="nav-item" data-toggle="modal" data-target="#profileModal">
+                  <span>View your Pet Health card</span>&nbsp;&nbsp;&nbsp;&nbsp;
+              </li>
+         
+                
+              <li>
                 <span>Welcome: </span>
                 <span><?php echo $_SESSION['UserLogin']; ?></span>
                 <span><?php echo $_SESSION['Userlname']; ?></span>

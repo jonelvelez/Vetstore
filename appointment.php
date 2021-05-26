@@ -66,7 +66,7 @@ if(isset($_POST['regSubmit'])){
 </div>
 
 <div class="appointment-form pt-5">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="card">
                 <h2 class="card-header">Appointment Form</h2>
@@ -116,78 +116,169 @@ if(isset($_POST['regSubmit'])){
                                     <p>Date: <input type="text" id="datepicker"></p>
                                </div> -->
                                 <div style="overflow-x: auto;">
-                                    <table class="table table-bordered text-center" style="width: 100%;">
-                                        <thead class="thead-dark">
+                                        <table class='table table-bordered text-center'>
+                                            <thead>
                                             <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Vaccine</th>
-                                            <th scope="col" colspan="5">Immunization Dates</th>
-                                            <th scope="col">Veterinarian</th>
+                                                <th scope='col' colspan='6'>card number: 0<h2>Anti - Parasitics</h2></th>
+                                            </tr>
+                                        </thead>
+                                        <thead class='thead-dark'>
+                                            <tr>
+                                                <th scope='col'>Date</th>
+                                                <th scope='col'>Weight</th>
+                                                <th scope='col'>Against</th>
+                                                <th scope='col'>Manufacturer</th>
+                                                <th scope='col'>LDT Number</th>
+                                                <th scope='col'>Veterinarian</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                    
+                                                <td><input type='date' name='d_row1_date' value='';></td>
+                                                <td><input type='text' name='d_row1_weight' value=''></td>
+                                                <td><input type='text' name='d_row1_against' value=''></td>
+                                                <td><input type='text' name='d_row1_manufacturer' value=''></td>
+                                                <td><input type='text' name='d_row1_ldtnumber' value=''></td>
+                                                <td><input type='text' name='d_row1_vet' value=''></td>
+                                            
+                                            <tr>
+                                            <tr>
+                                    
+                                            <td><input type='date' name='d_row2_date' value='';></td>
+                                            <td><input type='text' name='d_row2_weight' value=''></td>
+                                            <td><input type='text' name='d_row2_against' value=''></td>
+                                            <td><input type='text' name='d_row2_manufacturer' value=''></td>
+                                            <td><input type='text' name='d_row2_ldtnumber' value=''></td>
+                                            <td><input type='text' name='d_row2_vet' value=''></td>
+                                            
+                                            <tr>
                                             </tr>
                                             <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            
+                                            <td><input type='date' name='d_row3_date' value='';></td>
+                                            <td><input type='text' name='d_row3_weight' value=''></td>
+                                            <td><input type='text' name='d_row3_against' value=''></td>
+                                            <td><input type='text' name='d_row3_manufacturer' value=''></td>
+                                            <td><input type='text' name='d_row3_ldtnumber' value=''></td>
+                                            <td><input type='text' name='d_row3_vet' value=''></td>
+
                                             </tr>
                                             <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            
+                                            <td><input type='date' name='d_row4_date' value=''></td>
+                                            <td><input type='text' name='d_row4_weight' value=''></td>
+                                            <td><input type='text' name='d_row4_against' value=''></td>
+                                            <td><input type='text' name='d_row4_manufacturer' value=''></td>
+                                            <td><input type='text' name='d_row4_ldtnumber'value=''></td>
+                                            <td><input type='text' name='d_row4_vet' value=''></td>
+
                                             </tr>
                                             <tr>
-                                            <th scope="row">4</th>
-                                            <td>Larry</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+
+                                            <td><input type='date' name='d_row5_date' value=''></td>
+                                            <td><input type='text' name='d_row5_weight' value=''></td>
+                                            <td><input type='text' name='d_row5_against' value=''></td>
+                                            <td><input type='text' name='d_row5_manufacturer' value=''></td>
+                                            <td><input type='text' name='d_row5_ldtnumber' value=''></td>
+                                            <td><input type='text' name='d_row5_vet' value=''></td>
+
                                             </tr>
                                             <tr>
-                                            <th scope="row">5</th>
-                                            <td>Larry</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            </tr>
-                                            <tr>
-                                            <th scope="row">6</th>
-                                            <td>Larry</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            
+                                            <td><input type='date' name='d_row6_date' value=''></td>
+                                            <td><input type='text' name='d_row6_weight' value=''></td>
+                                            <td><input type='text' name='d_row6_against' value=''></td>
+                                            <td><input type='text' name='d_row6_manufacturer' value=''></td>
+                                            <td><input type='text' name='d_row6_ldtnumber'value=''></td>
+                                            <td><input type='text' name='d_row6_vet' value=''></td>
+
                                             </tr>
                                         </tbody>
                                     </table>
+                                        </div>
+                                <div class='table-wrapper'>
+                                    <table class='table table-bordered text-center'>
+                                        <thead>
+                                            <tr>
+                                                <th scope='col' colspan='6'><h2>Vaccine</h2></th>
+                                            </tr>
+                                            </thead>
+                                        <thead class='thead-dark'>
+                                            <tr>
+                                                <th scope='col'>Date</th>
+                                                <th scope='col'>Weight</th>
+                                                <th scope='col'>Against</th>
+                                                <th scope='col'>Manufacturer</th>
+                                                <th scope='col'>LDT Number</th>
+                                                <th scope='col'>Veterinarian</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                    
+                                            <td><input type='date' name='v_row1_date' value='';></td>
+                                            <td><input type='text' name='v_row1_weight' value=''></td>
+                                            <td><input type='text' name='v_row1_against' value=''></td>
+                                            <td><input type='text' name='v_row1_manufacturer' value=''></td>
+                                            <td><input type='text' name='v_row1_ldtnumber'value=''></td>
+                                            <td><input type='text' name='v_row1_vet' value=''></td>
+                                            
+                                            <tr>
+                                            <tr>
+                                            
+                                            <td><input type='date' name='v_row2_date' value='';></td>
+                                            <td><input type='text' name='v_row2_weight' value=''></td>
+                                            <td><input type='text' name='v_row2_against' value=''></td>
+                                            <td><input type='text' name='v_row2_manufacturer' value=''></td>
+                                            <td><input type='text' name='v_row2_ldtnumber' value=''></td>
+                                            <td><input type='text' name='v_row2_vet' value=''></td>
+                                            
+                                            <tr>
+                                            </tr>
+                                            <tr>
+                                            
+                                            <td><input type='date' name='v_row3_date' value='';></td>
+                                            <td><input type='text' name='v_row3_weight' value=''></td>
+                                            <td><input type='text' name='v_row3_against' value=''></td>
+                                            <td><input type='text' name='v_row3_manufacturer' value=''></td>
+                                            <td><input type='text' name='v_row3_ldtnumber' value=''></td>
+                                            <td><input type='text' name='v_row3_vet' value=''></td>
+                                            
+                                            </tr>
+                                            <tr>
+                                            
+                                            <td><input type='date' name='v_row4_date' value=''></td>
+                                            <td><input type='text' name='v_row4_weight' value=''></td>
+                                            <td><input type='text' name='v_row4_against' value=''></td>
+                                            <td><input type='text' name='v_row4_manufacturer' value=''></td>
+                                            <td><input type='text' name='v_row4_ldtnumber' value=''></td>
+                                            <td><input type='text' name='v_row4_vet' value=''></td>
+                                            
+                                            </tr>
+                                            <tr>
+                                            
+                                            <td><input type='date' name='v_row5_date' value=''></td>
+                                            <td><input type='text' name='v_row5_weight' value=''></td>
+                                            <td><input type='text' name='v_row5_against' value=''></td>
+                                            <td><input type='text' name='v_row5_manufacturer' value=''></td>
+                                            <td><input type='text' name='v_row5_ldtnumber' value=''></td>
+                                            <td><input type='text' name='v_row5_vet' value=''></td>
+                                            
+                                            </tr>
+                                            <tr>
+                                            
+                                            <td><input type='date' name='v_row6_date' value=''></td>
+                                            <td><input type='text' name='v_row6_weight' value=''></td>
+                                            <td><input type='text' name='v_row6_against' value=''></td>
+                                            <td><input type='text' name='v_row6_manufacturer' value=''></td>
+                                            <td><input type='text' name='v_row6_ldtnumber' value=''></td>
+                                            <td><input type='text' name='v_row6_vet' value=''></td>
+                                            
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                  
                                 </div>
                             </div>
                         </div>
